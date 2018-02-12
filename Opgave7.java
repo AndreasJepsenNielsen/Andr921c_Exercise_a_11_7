@@ -1,7 +1,5 @@
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 //opgave 7
 
@@ -11,19 +9,24 @@ public class Opgave7 {
         List<Integer> a = new LinkedList<>();
         List<Integer> b = new LinkedList<>();
 
-        a.add(1);
-        a.add(2);
+        a.add(3);
+        a.add(7);
         a.add(3);
         a.add(-1);
-        a.add(5);
-        a.add(5);
+        a.add(2);
+        a.add(3);
+        a.add(7);
+        a.add(2);
+        a.add(15);
+        a.add(15);
 
-        b.add(4);
-        b.add(4);
-        b.add(1);
-        b.add(-1);
+        b.add(-5);
+        b.add(15);
         b.add(2);
-        b.add(5);
+        b.add(-1);
+        b.add(7);
+        b.add(15);
+        b.add(36);
 
         countCommon(a, b);
     }
@@ -33,12 +36,14 @@ public class Opgave7 {
 
 
         Set<Integer> set = new TreeSet<>();
+        Set<Integer> set2 = new TreeSet<>();
 
         set.addAll(list1);
-
-        for (int i = 0; i < list2.size() ; i++)
+        set2.addAll(list2);
+        Iterator it = set2.iterator();
+        for (int i = 0; i < set2.size() ; i++)
         {
-            if(set.contains(list2.get(i))) // hvis vores set indeholder numret bliver der tilføjet 1 til count, og den tæller derfor hver gang der er en int der fremtræder i begger lister
+            if(set.contains(it.next())) // hvis vores set indeholder numret bliver der tilføjet 1 til count, og den tæller derfor hver gang der er en int der fremtræder i begger lister
             {
                 count++;
             }
